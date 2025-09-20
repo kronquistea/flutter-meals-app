@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_meals_app/models/meal.dart';
 import 'package:flutter_meals_app/screens/categories.dart';
+import 'package:flutter_meals_app/screens/filters.dart';
 import 'package:flutter_meals_app/screens/meals.dart';
 import 'package:flutter_meals_app/widgets/main_drawer.dart';
 
@@ -49,9 +50,14 @@ class _TabsScreenState extends State<TabsScreen> {
   }
 
   void _setScreen(String identifier) {
+    Navigator.pop(context);
     if (identifier == 'filters') {
-    } else {
-      Navigator.pop(context);
+      // could use pushReplacement to disable "back button"
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (ctx) => const FiltersScreen(),
+        ),
+      );
     }
   }
 
