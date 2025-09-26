@@ -92,7 +92,6 @@ class _CategoriesScreenState extends State<CategoriesScreen>
             ),
         child: child,
       ),
-      // builder: (context, child) => FadeTransition(opacity: opacity)
     );
   }
 }
